@@ -38,3 +38,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
       # run: ./unit_tests
+
+    - name: Coverage
+      working-directory: ${{github.workspace}}/build/tests
+      run: lcov --directory . --capture --output-file coverage.info && lcov --remove coverage.info '/usr/*' "${HOME}"'/.cache/*' --output-file coverage.info && lcov --list coverage.info
