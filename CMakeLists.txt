@@ -18,14 +18,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS          ON)
 # -------
 # option(ENABLE_CLANG_TIDY "Enable to add clang tidy."              OFF)
 # option(ENABLE_TESTING "Unit testing build"                        ON)
-# option(CODE_COVERAGE "Collect coverage from test library"         ON)
+# option(ENABLE_COVERAGE "Collect coverage from test library"         ON)
 
-if(CODE_COVERAGE)
+if(ENABLE_COVERAGE)
   SET(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage")
   SET(GCC_COVERAGE_LINK_FLAGS    "--coverage")
   SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
   SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
-endif(CODE_COVERAGE)
+endif(ENABLE_COVERAGE)
 
 set(SRC_LIST
 	"${PROJECT_SOURCE_DIR}/src/main.cpp"
