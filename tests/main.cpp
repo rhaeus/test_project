@@ -3,7 +3,8 @@
                           // this in one cpp file
 // #include <catch2/catch_test_macros.hpp>
 // #include <catch2/catch_all.hpp>
-#include <catch2/catch.hpp>
+// #include <catch2/catch.hpp>
+#include "catch.hpp"
 
 #include "factorial.hpp"
 
