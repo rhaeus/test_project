@@ -22,11 +22,11 @@
   )
 
   enable_testing()
-  add_test(NAME ${TEST_MAIN} COMMAND ${TEST_MAIN})
+  # add_test(NAME ${TEST_MAIN} COMMAND ${TEST_MAIN})
 
-  # include(CTest)
-  # include(Catch)
-  # catch_discover_tests(${TEST_MAIN})
+  include(CTest)
+  include(Catch)
+  catch_discover_tests(${TEST_MAIN})
 
   # if(CODE_COVERAGE)
   #     set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
