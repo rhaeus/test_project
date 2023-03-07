@@ -47,15 +47,16 @@ jobs:
     - name: Coverage
       # https://swarminglogic.com/scribble/2014_05_lcov
       # Generate coverage based on executed tests
-      run: lcov -b . -c -d ./build -o .coverage.run 
       # Merge coverage tracefiles
-      run: lcov -a .coverage.base -a .coverage.run  -o .coverage.total
       # Filtering, extracting project files
-      run: lcov -e .coverage.total "`pwd`/*" -o .coverage.total.filtered
       # Filtering, removing test-files
-      run: lcov -r .coverage.total.filtered '*/tests/*' -o .coverage.total.filtered
       # show coverage
-      run: lcov --list .coverage.total.filtered
+      run: | 
+        lcov -b . -c -d ./build -o .coverage.run 
+        lcov -a .coverage.base -a .coverage.run  -o .coverage.total
+        lcov -e .coverage.total "`pwd`/*" -o .coverage.total.filtered
+        lcov -r .coverage.total.filtered '*/tests/*' -o .coverage.total.filtered
+        lcov --list .coverage.total.filtered
 
       # working-directory: ${{github.workspace}}/build/tests
       # run: lcov --directory . --capture --output-file coverage.info && lcov --remove coverage.info '/usr/*' "${HOME}"'/.cache/*' '*/tests/*' --output-file coverage.info && lcov --list coverage.info
