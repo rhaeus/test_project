@@ -17,8 +17,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS          ON)
 # Options
 # -------
 # option(ENABLE_CLANG_TIDY "Enable to add clang tidy."              OFF)
-option(ENABLE_TESTING "Unit testing build"                        ON)
-option(CODE_COVERAGE "Collect coverage from test library"         ON)
+# option(ENABLE_TESTING "Unit testing build"                        ON)
+# option(CODE_COVERAGE "Collect coverage from test library"         ON)
 
 if(CODE_COVERAGE)
   SET(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage")
