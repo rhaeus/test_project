@@ -15,7 +15,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS          ON)
 # -------
 # option(ENABLE_CLANG_TIDY "Enable to add clang tidy."              OFF)
 option(ENABLE_TESTING "Unit testing build"                        ON)
-option(CODE_COVERAGE "Collect coverage from test library"         ON)
+# option(CODE_COVERAGE "Collect coverage from test library"         ON)
 
 
 set(SRC_LIST
