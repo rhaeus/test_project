@@ -18,11 +18,11 @@ if(ENABLE_TESTING)
   Catch2::Catch2
   # Catch2::Catch2WithMain
   )
+
+  enable_testing()
   add_test(NAME ${TEST_MAIN} COMMAND ${TEST_MAIN})
 
   # include(CTest)
   # include(Catch)
-  # enable_testing()
-
   # catch_discover_tests(${TEST_MAIN})
 endif(ENABLE_TESTING)
