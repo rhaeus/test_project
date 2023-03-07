@@ -40,7 +40,7 @@ jobs:
       # Note: $GITHUB_WORKSPACE is distinct from ${{runner.workspace}}.
       #       This is important
       run: |
-        cmake -Bbuild -H$GITHUB_WORKSPACE \
+        cmake -Bbuild ${{github.workspace}}/build  \
               -DCMAKE_BUILD_TYPE=${{env.build_type}} \
               -DENABLE_TESTING=ON \
               -DENABLE_COVERAGE=ON 
