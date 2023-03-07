@@ -1,10 +1,9 @@
-if(ENABLE_TESTING)
-    set(TEST_MAIN
-      "unit_tests")
-    set(TEST_SOURCES
-      "test_main.cpp"
-      "second_test_file.cpp"
-      )
+  set(TEST_MAIN
+    "unit_test")
+  set(TEST_SOURCES
+    "test_main.cpp"
+    "second_test_file.cpp"
+    )
 
   SET(GCC_COVERAGE_COMPILE_FLAGS "-fprofile-arcs -ftest-coverage")
   SET(GCC_COVERAGE_LINK_FLAGS    "--coverage")
@@ -30,10 +29,10 @@ if(ENABLE_TESTING)
   # catch_discover_tests(${TEST_MAIN})
 
   # if(CODE_COVERAGE)
-  #     set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+  #     set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
   #     include(CodeCoverage)
   #     append_coverage_compiler_flags()
   #     # setup_target_for_coverage_lcov(NAME coverage EXECUTABLE ${TEST_MAIN} BASE_DIRECTORY ../coverage)
+  #     # setup_target_for_coverage_lcov(NAME coverage)
   #     setup_target_for_coverage_lcov(NAME coverage EXECUTABLE ${TEST_MAIN} )
   # endif()
-endif(ENABLE_TESTING)
